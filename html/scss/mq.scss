@@ -1,0 +1,63 @@
+// MEDIAQUERIES
+
+
+  // 2 COLUMNS
+
+    @media only screen
+    and (min-width: 640px)
+    and (max-width: 959px) {
+
+      .map-container {
+        width: 620px;
+
+        &.asia-container {
+          height: 580px;
+        }
+        &.africa-container {
+          height: 680px;
+        }
+        &.europe-container {
+          height: 760px;
+        }
+      }
+    }
+
+  // 1 COLUMN
+    @media only screen
+    and (max-width: 639px) {
+
+      .map-container {
+        width: 300px;
+
+        &.asia-container {
+          height: 300px;
+        }
+        &.africa-container {
+          height: 380px;
+        }
+        &.europe-container {
+          height: 760px;
+        }
+      }
+    }
+
+
+
+
+
+    // iPhone (portrait and landscape)
+    	@media only screen
+    	and (min-device-width : 320px)
+    	and (max-device-width : 480px) {
+        .map-container {
+          width: 300px;
+          height: 50vh;
+          padding-top: 0;
+
+          .country {
+            stroke: $wh-tr-6;
+            stroke-width: 3px;
+
+          }
+        }
+    	}

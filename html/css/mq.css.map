@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "mq.css",
+	"sources": [
+		"../scss/mq.scss"
+	],
+	"sourcesContent": [],
+	"mappings": "",
+	"names": []
+}

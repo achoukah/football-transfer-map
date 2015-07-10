@@ -1,0 +1,292 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'Avenir Heavy';
+  src: url("../fonts/AvenirNextLTW01-Heavy.eot");
+  src: url("../fonts/AvenirNextLTW01-Heavy.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirNextLTW01-Heavy.svg") format("svg"), url("../fonts/AvenirNextLTW01-Heavy.woff") format("woff"), url("../fonts/AvenirNextLTW01-Heavy.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Ultralight';
+  src: url("../fonts/AvenirNextLTW01-UltraLi.eot");
+  src: url("../fonts/AvenirNextLTW01-UltraLi.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirNextLTW01-UltraLi.svg") format("svg"), url("../fonts/AvenirNextLTW01-UltraLi.woff") format("woff"), url("../fonts/AvenirNextLTW01-UltraLi.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Regular';
+  src: url("../fonts/AvenirNextW06Regular.eot");
+  src: url("../fonts/AvenirNextW06Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirNextW06Regular.svg") format("svg"), url("../fonts/AvenirNextW06Regular.woff") format("woff"), url("../fonts/AvenirNextW06Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font: 16px/1.4 "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.map-container {
+  width: 980px;
+  margin: auto;
+  position: relative;
+  background: -webkit-linear-gradient(rgba(26, 26, 26, 0.2) 0%, rgba(26, 26, 26, 0.1) 100%);
+  background: linear-gradient(rgba(26, 26, 26, 0.2) 0%, rgba(26, 26, 26, 0.1) 100%);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+.map-container svg {
+  width: 100%;
+  margin: auto;
+}
+
+.map-container:after {
+  display: block;
+  width: 100%;
+  padding: .1em;
+  font-size: 1.3em;
+  text-align: center;
+  background: #033;
+  color: white;
+  font-family: 'Avenir Heavy', sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+}
+
+.map-container.asia-container {
+  height: 870px;
+}
+
+.map-container.asia-container:after {
+  content: 'Asia, Australasia';
+}
+
+.map-container.africa-container {
+  height: 960px;
+}
+
+.map-container.africa-container:after {
+  content: 'Africa';
+}
+
+.map-container.europe-container {
+  height: 760px;
+}
+
+.map-container.europe-container:after {
+  content: 'Europe';
+}
+
+.country {
+  -webkit-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
+  fill: #699;
+  stroke: white;
+  stroke-width: 1px;
+  cursor: pointer;
+  position: relative;
+}
+
+.country:hover {
+  fill: #033;
+}
+
+#text {
+  margin: 50px auto;
+  width: 500px;
+}
+
+#tt,
+#light {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 1px 2px 0 #tt, #light;
+  color: #333;
+  position: relative;
+  margin: 1em;
+}
+
+#tt h1,
+#light h1 {
+  padding: 0.5rem 1rem;
+  background: #c00;
+  color: white;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: 'Avenir Heavy', 'Open Sans', sans-serif;
+}
+
+#tt h2,
+#light h2 {
+  padding: 0.2rem 1rem;
+  background: #cccccc;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: 'Avenir Regular', 'Open Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+#tt p,
+#light p {
+  padding: 0.5rem 1rem;
+  font-size: .9rem;
+}
+
+#tt p b,
+#light p b {
+  font-weight: 800;
+}
+
+#ttcont {
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+
+#ttcont h1 {
+  padding: 0.5rem 1rem;
+  background: #c00;
+  color: white;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: 'Avenir Heavy', 'Open Sans', sans-serif;
+}
+
+#ttcont h2 {
+  padding: 0.2rem 1rem;
+  background: #cccccc;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: 'Avenir Regular', 'Open Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+#ttcont p {
+  padding: 0.5rem 1rem;
+  font-size: .9rem;
+}
+
+#ttcont p b {
+  font-weight: 800;
+}
+
+@media only screen and (min-width: 640px) and (max-width: 959px) {
+  .map-container {
+    width: 620px;
+  }
+  .map-container.asia-container {
+    height: 580px;
+  }
+  .map-container.africa-container {
+    height: 680px;
+  }
+  .map-container.europe-container {
+    height: 760px;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .map-container {
+    width: 300px;
+  }
+  .map-container.asia-container {
+    height: 300px;
+  }
+  .map-container.africa-container {
+    height: 380px;
+  }
+  .map-container.europe-container {
+    height: 760px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .map-container {
+    width: 300px;
+    height: 50vh;
+    padding-top: 0;
+  }
+  .map-container .country {
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 3px;
+  }
+}
