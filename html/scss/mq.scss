@@ -6,7 +6,9 @@
     @media only screen
     and (min-width: 640px)
     and (max-width: 959px) {
-
+      body {
+        width: 620px;
+      }
       .map-container {
         width: 620px;
 
@@ -15,17 +17,34 @@
         }
         &.africa-container {
           height: 680px;
+
+          svg {
+            width: 140%;
+            position: relative;
+            left: -170px;
+            top: -00px;
+          }
         }
         &.europe-container {
-          height: 760px;
+          height: 670px;
+
+          svg {
+            width: 140%;
+            position: relative;
+            left: -120px;
+            top: -00px;
+          }
         }
+        
       }
     }
 
   // 1 COLUMN
     @media only screen
     and (max-width: 639px) {
-
+      body {
+        width: 300px;
+      }
       .map-container {
         width: 300px;
 
@@ -34,9 +53,23 @@
         }
         &.africa-container {
           height: 380px;
+
+          svg {
+            width: 130%;
+            position: relative;
+            left: -66px;
+            top: 10px;
+          }
         }
         &.europe-container {
-          height: 760px;
+          height: 300px;
+
+          svg {
+            width: 160%;
+            position: relative;
+            left: -80px;
+            top: -00px;
+          }
         }
       }
     }

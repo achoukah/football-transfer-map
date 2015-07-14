@@ -18,9 +18,11 @@
   $wh-tr-8: rgba($wh-lt, .8);
   $wh-tr-9: rgba($wh-lt, .9);
 
-  $bk-md: #333;
-  $bk-lt: lighten($bk-md, 60%);
-  $bk-dk: darken($bk-md, 10%);
+  $bk-md: #666;
+  $bk-dk: #333;
+  $bk-xl: lighten($bk-dk, 75%);
+  $bk-lt: lighten($bk-dk, 60%);
+
 
   $bk-tr-1: rgba($bk-dk, .1);
   $bk-tr-2: rgba($bk-dk, .2);
@@ -57,7 +59,12 @@
 @import "fonts";
 
 body {
-  font: 16px/1.4 'Open Sans', Arial, Helvetica, sans-serif
+  font: 16px/1.4 'Open Sans', Arial, Helvetica, sans-serif;
+  position: relative;
+  display: block;
+  margin: auto;
+
+  width: 980px;
 }
 *,
 *::before,
@@ -79,6 +86,7 @@ html {
   background: $water;
   display: flex;
   flex-flow: column wrap;
+  overflow: hidden;
 
 
   svg {
@@ -120,6 +128,14 @@ html {
       content: 'Europe';
     }
   }
+  &.test-container {
+
+    height: 500px;
+
+      &:after {
+      content: 'TESTING';
+    }
+  }
 }
 
 .country {
@@ -141,21 +157,6 @@ html {
   }
 }
 
-// .tooltip {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   background: $wh-tr-8;
-//   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-//   display: none;
-//   // height: auto;
-//
-//   &:after {
-//     display: none;
-//   }
-//
-// }
-
 
 #text {
   margin: 50px auto;
@@ -164,39 +165,174 @@ html {
 
 
 
-#tt,
-#light {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: $wh-lt;
-  box-shadow:       1px 2px 0 &bk-tr-9;
-  color:            #333;
-  position:         relative;
-  margin:           1em;
+// #tt {
+//   position: absolute;
+//   display: block;
+//   top: -40vh;
+//   left: 0;
+//   width: 50%;
+//   background: $wh-lt;
+//   z-index: 100;
+//   height: 40vh;
+//   overflow: scroll;
+//   color: #333;
+//   position: relative;
+//   margin: 1em;
+//   box-shadow: 0 0 2em $bk-tr-3;
+
+//   #ttcont {
+//     display: block;
+//     padding: 0;
+//     display: flex;
+//     flex-direction: column;
+    
+//   }
+
+//   h1 {
+//     padding: .5rem 1rem ;
+//     background: $sport-md;
+//     color: $wh-lt;
+//     font-size: 1.4rem;
+//     text-transform: uppercase;
+//     font-family: 'Avenir Heavy', 'Open Sans', sans-serif;
+//   }
+//   h2 {
+//     padding: .25rem 1rem .1rem;
+//     background: $bk-xl;
+//     color: $bk-md;
+//     font-size: 1.2rem;
+//     // font-weight: 800;
+//     font-family: 'Avenir Heavy', 'Open Sans', sans-serif;
+//     text-transform: uppercase;
+//   }
+//   p {
+//     padding: .5rem 1rem 1rem 6rem;
+//     font-size: .9rem;
+//     position: relative;
+//     min-height: 5.6rem;
+//     // display: flex;
+//     // flex-direction: row;
+
+
+//     &:after {
+//       display: block;
+//       width: 5rem;
+//       height: 5rem;
+//       content: '';
+//       background-image: url(../img/avatar.svg);
+//       background-color: $bk-tr-1;
+//       background-size: 120%;
+//       background-position: 50%;
+//       background-repeat: no-repeat;
+//       position: absolute;
+//       top: .3rem;
+//       left: .3rem;
+//     }
+
+//     b {
+//       font-weight: 800;
+//     }
+//   }
+// }
+
+
+.overlay {
+    background:  $bk-tr-6;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 100;
+}
+
+.box {
+  position: fixed;
+  top: -600px;
+  padding: 3rem 1rem 0;
+  // left: 0;
+  // right: 0;
+  background-color: transparent;
+  color: $bk-md;
+  // padding: 20px;
+  
+  z-index: 101;
+  width: 980px;
+  height: 480px;
+  overflow: scroll;
+  // position: relative;
+
+  a.boxclose {
+    
+    width: 1.6rem;
+    height: 1.6rem;
+    color: $sport-dk;
+    background: url(../img/x.svg) 50% no-repeat $sport-md;
+    background-size: 80%;
+    margin-top: -1rem;
+    margin-left: 0rem;
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    
+    right: calc(50% - 490px);
+
+    z-index: 103;
+    border: 2px solid $wh-lt;
+    border-radius: 100%;
+    box-shadow: 0 0 .5rem $wh-lt;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background-color: $rd-md;
+      box-shadow: 0 0 2rem $wh-lt;
+    }
+  }
 
   h1 {
-    padding: .5rem 1rem;
-    background: $rd-md;
+    padding: .3rem 1rem;
+    background: $sport-md;
     color: $wh-lt;
     font-size: 1.4rem;
     text-transform: uppercase;
     font-family: 'Avenir Heavy', 'Open Sans', sans-serif;
+    top: 0rem;
+    width: calc(980px-2rem);
   }
   h2 {
-    padding: .2rem 1rem;
-    background: $bk-lt;
+    padding: .25rem 1rem .1rem;
+    background: $bk-xl;
     color: $bk-md;
     font-size: 1.2rem;
-    font-weight: 800;
-    font-family: 'Avenir Regular', 'Open Sans', sans-serif;
+    // font-weight: 800;
+    font-family: 'Avenir Heavy', 'Open Sans', sans-serif;
     text-transform: uppercase;
   }
   p {
-    padding: .5rem 1rem;
+    padding: .5rem 1rem 1rem 6rem;
     font-size: .9rem;
+    position: relative;
+    min-height: 5.6rem;
+    background: $wh-lt;
+
+    // display: flex;
+    // flex-direction: row;
+
+
+    &:after {
+      display: block;
+      width: 5rem;
+      height: 5rem;
+      content: '';
+      background-image: url(../img/avatar.svg);
+      background-color: $bk-tr-1;
+      background-size: 120%;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: .3rem;
+      left: .3rem;
+    }
 
     b {
       font-weight: 800;
@@ -204,39 +340,8 @@ html {
   }
 }
 
-#ttcont {
-  display: block;
-  padding: 0;
-  width: 100%;
 
 
-  h1 {
-    padding: .5rem 1rem;
-    background: $rd-md;
-    color: $wh-lt;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    font-family: 'Avenir Heavy', 'Open Sans', sans-serif;
-  }
-  h2 {
-    padding: .2rem 1rem;
-    background: $bk-lt;
-    color: $bk-md;
-    font-size: 1.2rem;
-    font-weight: 800;
-    font-family: 'Avenir Regular', 'Open Sans', sans-serif;
-    text-transform: uppercase;
-  }
-  p {
-    padding: .5rem 1rem;
-    font-size: .9rem;
-
-    b {
-      font-weight: 800;
-    }
-  }
-
-}
 
 
 
