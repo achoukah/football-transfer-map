@@ -87,7 +87,6 @@
     </p>
   </div>
 
-
   <div class="box italy">
 
     <a class="boxclose"></a>
@@ -128,20 +127,29 @@
 
 </div>
 
+
 <script>
-  $(function() {
+   $(function() {
+
+    var myID;
+
   $('.country').click(function(){
-    console.log($(this).attr('id'));
-  $('.'+$(this).attr('id')).fadeIn('fast',function(){
-  $('.box').animate({'top':'0'},200);
+    myID = $(this).attr('id');
+    $("."+myID).fadeIn('fast',function(){
+      $("."+myID).animate({'top':'0'},200);
+    });
+    
   });
-  });
+
+
   $('.boxclose').click(function(){
-  $('.box').animate({'top':'-600px'},300,function(){
-  $('.overlay').fadeOut('fast');
+    $('.box').animate({'top':'-600px'},300,function(){
+      $('.overlay').fadeOut('fast');
+    });
+    });
+
   });
-  });
-  });
+
 </script>
 </body>
 </html>
