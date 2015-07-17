@@ -14,6 +14,13 @@
 
         &.asia-container {
           height: 580px;
+
+          svg {
+            width: 140%;
+            position: relative;
+            left: -70px;
+            top: 38px;
+          }
         }
         &.africa-container {
           height: 680px;
@@ -32,10 +39,17 @@
             width: 140%;
             position: relative;
             left: -120px;
-            top: -00px;
+            top: 0px;
           }
         }
-        
+      }
+      .box {
+        width: 620px;
+        height: 600px;
+
+        a.boxclose {
+          right: calc(50% - 307px);
+        }
       }
     }
 
@@ -49,16 +63,23 @@
         width: 300px;
 
         &.asia-container {
-          height: 300px;
+          height: 340px;
+
+          svg {
+            width: 120%;
+            position: relative;
+            left: 0;
+            top: 40px;
+          }
         }
         &.africa-container {
           height: 380px;
 
           svg {
-            width: 130%;
+            width: 120%;
             position: relative;
-            left: -66px;
-            top: 10px;
+            left: -52px;
+            top: 30px;
           }
         }
         &.europe-container {
@@ -69,6 +90,33 @@
             position: relative;
             left: -80px;
             top: -00px;
+          }
+        }
+      }
+      .box {
+        width: 300px;
+        height: 280px;
+        font-size: .8em;
+
+        a.boxclose {
+          right: calc(50% - 147px);
+        }
+        h1 {
+          font-size: 1.4em;
+        }
+        h2 {
+          font-size: 1.1em;
+          line-height: 1.3;
+        }
+        p {
+          padding: .5rem 1rem 2rem 3rem;
+          font-size: inherit;
+          line-height: 1.3;
+
+          &:after {
+            width: 2rem;
+            height: 2rem;
+            top: .6rem
           }
         }
       }
